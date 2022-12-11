@@ -1,4 +1,5 @@
-var timeList = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]
+var timeList = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var containerEL = $('#container');
 
 $(document).ready(function () {
 
@@ -11,9 +12,12 @@ $(document).ready(function () {
     }
     showToday()
 
-    for (i = 0; i < timeList.length; i++) {
+    // for (i = 0; i < timeList.length; i++) {
+    //     var timeDiv = $('<div>');
+    //     containerEL.append(timeDiv);
 
-    }
+
+    // }
 
 
 })
