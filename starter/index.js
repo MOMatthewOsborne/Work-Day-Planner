@@ -1,7 +1,8 @@
-var timeList = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+
 var containerEL = $('#container');
 var currentHour = moment().format("HH");
 console.log(currentHour)
+// vars for local storage
 var nine = document.getElementsByClassName("nine");
 var ten = document.getElementsByClassName("ten")
 var eleven = document.getElementsByClassName("eleven");
@@ -13,9 +14,9 @@ var sixteen = document.getElementsByClassName("sixteen");
 var seventeen = document.getElementsByClassName("seventeen");
 
 
-
+// Runs on page load
 $(document).ready(function () {
-
+    // Checks if anything is in local storage and dislays it
     $(".nine").val(window.localStorage.getItem("9am"))
     $(".ten").val(window.localStorage.getItem("10am"))
     $(".eleven").val(window.localStorage.getItem("11am"))
@@ -35,14 +36,7 @@ $(document).ready(function () {
         dateDisplay.append(todayDate);
     }
     showToday()
-
-    // for (i = 0; i < timeList.length; i++) {
-    //     var timeDiv = $('<div>');
-    //     containerEL.append(timeDiv);
-
-
-    // }
-
+    // Checks time and colour codes accordingly by changing class
     function timeUpdate() {
         $('.time-block').each(function () {
             var tableTime = parseInt($(this).children().attr('id'));
@@ -67,7 +61,7 @@ $(document).ready(function () {
     }
 
     timeUpdate();
-
+    // When save button is clicked, saves to local storage
     $(".saveBtn").on("click", function () {
         var noteWritten = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
