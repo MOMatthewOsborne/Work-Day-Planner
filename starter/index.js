@@ -1,7 +1,6 @@
 
 var containerEL = $('#container');
 var currentHour = moment().format("HH");
-console.log(currentHour)
 // vars for local storage
 var nine = document.getElementsByClassName("nine");
 var ten = document.getElementsByClassName("ten")
@@ -26,13 +25,11 @@ $(document).ready(function () {
     $(".fifteen").val(window.localStorage.getItem("3pm"))
     $(".sixteen").val(window.localStorage.getItem("4pm"))
     $(".seventeen").val(window.localStorage.getItem("5pm"))
-    console.log(nine)
 
     // This function shows the correct date at the top of the page
     function showToday() {
         var dateDisplay = document.getElementById("currentDay")
         var todayDate = moment().format("dddd Do MMMM");
-        console.log(todayDate)
         dateDisplay.append(todayDate);
     }
     showToday()
